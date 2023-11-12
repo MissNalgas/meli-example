@@ -5,7 +5,7 @@ const express = require('express');
 const next = require('next');
 const router = require('./routes');
 
-const nextApp = next({dev});
+const nextApp = next({dev, port});
 const handle = nextApp.getRequestHandler();
 
 nextApp.prepare().then(() => {
