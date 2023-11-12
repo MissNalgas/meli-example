@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 export default function MainContainer({children} : MainContainerProps) {
 
-	const router = useRouter();
+    const router = useRouter();
 
     const onSubmit : FormEventHandler<HTMLFormElement> = e => {
         e.preventDefault();
@@ -15,8 +15,8 @@ export default function MainContainer({children} : MainContainerProps) {
         const search = searchElement.value;
         if (!search) return;
 
-		router.push(`/items?search=${search}`);
-
+        searchElement.blur();
+        router.push(`/items?search=${search}`);
     }
 
 
@@ -29,7 +29,7 @@ export default function MainContainer({children} : MainContainerProps) {
                 />
             </div>
             <div className="bg-light-gray flex-1">
-				{children}
+                {children}
             </div>
         </div>
     )
@@ -37,5 +37,5 @@ export default function MainContainer({children} : MainContainerProps) {
 
 }
 interface MainContainerProps {
-	children?: React.ReactNode;
+    children?: React.ReactNode;
 }
