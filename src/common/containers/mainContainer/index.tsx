@@ -1,5 +1,6 @@
 "use client"
 
+import React from 'react';
 import { FormEventHandler } from "react";
 import SearchBox from "@common/components/searchBox";
 import { useRouter } from "next/navigation";

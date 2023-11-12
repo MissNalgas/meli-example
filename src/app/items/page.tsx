@@ -1,22 +1,28 @@
 "use client"
 import BreadCrumps from "@common/components/breadCrumps";
 import ResultItem from "@common/components/resultItem";
-import { useRouter } from "next/navigation";
+import { useItems } from "@modules/items/application/hooks";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function ItemsPage() {
 
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const search = searchParams.get('search');
+    const items = useItems(search);
+
 
     return (
         <div className="w-full max-w-screen-lg mx-auto my-small flex flex-col gap-small">
             <BreadCrumps/>
             <div>
-                {[...Array(4)].map((_, i) => (
+                {items.map((item) => (
                     <ResultItem
                         onClick={() => {
-                            router.push(`/items/${i}`)
+                            router.push(`/items/${item.id}`)
                         }}
-                        key={i}
+                        key={item.id}
+                        item={item}
                     />
                 ))}
             </div>
