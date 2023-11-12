@@ -36,7 +36,7 @@ export default function ItemDetailPage() {
                 <div className="p-medium gap-medium flex flex-col">
                     <h2 className="text-2xl font-semibold">Descripción del producto</h2>
                     <p className="text-dark-gray">
-                        {description}
+                        {description || "Este producto no tiene descripción"}
                     </p>
                 </div>
             </div>
