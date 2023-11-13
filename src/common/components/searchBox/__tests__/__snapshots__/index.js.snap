@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBox renders correctly 1`] = `
+<div
+  className="flex gap-4 undefined"
+>
+  <a
+    href="/"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onTouchStart={[Function]}
+  >
+    <img
+      alt="ML logo"
+      data-nimg="1"
+      decoding="async"
+      height={36}
+      loading="lazy"
+      onError={[Function]}
+      onLoad={[Function]}
+      src="/_next/image?url=%2FLogo_ML.png&w=128&q=75"
+      srcSet="/_next/image?url=%2FLogo_ML.png&w=64&q=75 1x, /_next/image?url=%2FLogo_ML.png&w=128&q=75 2x"
+      style={
+        {
+          "color": "transparent",
+        }
+      }
+      width={53}
+    />
+  </a>
+  <form
+    className="rounded overflow-hidden flex bg-white flex-1"
+    onSubmit={[Function]}
+  >
+    <input
+      className="p-2 focus:outline-secondary h-10 w-full text-xgray"
+      name="search"
+      placeholder="Nunca dejes de buscar"
+    />
+    <button
+      className="bg-light-gray h-10 w-10 grid place-content-center rounded"
+      type="submit"
+    >
+      <img
+        alt="Search icon"
+        data-nimg="1"
+        decoding="async"
+        height={22}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src="/_next/image?url=%2Fic_Search%402x.png&w=48&q=75"
+        srcSet="/_next/image?url=%2Fic_Search%402x.png&w=32&q=75 1x, /_next/image?url=%2Fic_Search%402x.png&w=48&q=75 2x"
+        style={
+          {
+            "color": "transparent",
+          }
+        }
+        width={22}
+      />
+    </button>
+  </form>
+</div>
+`;

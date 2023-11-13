@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultItem renders correctly 1`] = `
+[
+  <button
+    className="flex w-full p-small gap-small bg-white items-stretch"
+    onClick={[Function]}
+  >
+    <div
+      className="rounded w-image h-image bg-center bg-cover"
+      style={
+        {
+          "backgroundImage": "url('picture')",
+        }
+      }
+    />
+    <div
+      className="flex flex-col gap-medium justify-center flex-1 items-stretch"
+    >
+      <div
+        className="flex items-center justify-between max-w-2xl"
+      >
+        <h2
+          className="text-2xl"
+        >
+          $3,000
+        </h2>
+        <span
+          className="text-dark-gray text-xs"
+        >
+          city
+        </span>
+      </div>
+      <h3
+        className="text-lg text-left"
+      >
+        title
+      </h3>
+    </div>
+  </button>,
+  <hr />,
+]
+`;

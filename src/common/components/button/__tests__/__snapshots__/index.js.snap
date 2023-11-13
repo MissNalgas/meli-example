@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders button correctly 1`] = `
+<button
+  className="rounded bg-secondary text-lg text-white w-full h-12 hover:bg-secondary-200 transition undefined"
+>
+  button
+</button>
+`;

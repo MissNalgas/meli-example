@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchButton renders correctly 1`] = `
+<button
+  className="bg-light-gray h-10 w-10 grid place-content-center rounded"
+>
+  <img
+    alt="Search icon"
+    data-nimg="1"
+    decoding="async"
+    height={22}
+    loading="lazy"
+    onError={[Function]}
+    onLoad={[Function]}
+    src="/_next/image?url=%2Fic_Search%402x.png&w=48&q=75"
+    srcSet="/_next/image?url=%2Fic_Search%402x.png&w=32&q=75 1x, /_next/image?url=%2Fic_Search%402x.png&w=48&q=75 2x"
+    style={
+      {
+        "color": "transparent",
+      }
+    }
+    width={22}
+  />
+</button>
+`;
