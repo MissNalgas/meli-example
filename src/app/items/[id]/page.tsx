@@ -22,7 +22,7 @@ export default function ItemDetailPage() {
             <div className="bg-white rounded">
                 <div className="flex gap-small flex-col sm:flex-row">
                     <div
-                        className="ml-small mt-small bg-white rounded bg-center bg-contain max-w-full w-lg-image h-lg-image bg-no-repeat"
+                        className="sm:ml-small sm:mt-small bg-white rounded bg-center bg-contain max-w-full w-lg-image h-lg-image bg-no-repeat"
                         style={{backgroundImage: `url('${picture}')`}}
                     />
                     <div className="p-medium flex-1">
