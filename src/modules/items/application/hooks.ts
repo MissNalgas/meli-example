@@ -2,15 +2,24 @@ import { useEffect, useState } from "react";
 import { IItem, IItemDetail } from "../domain/models";
 import { itemsService } from "../infrastructure/services";
 
-export function useItems(query?: string | null) {
+type UseItemsReturn = [
+	IItem[],
+	boolean
+];
+
+export function useItems(query?: string | null) : UseItemsReturn {
 	const [data, setData] = useState<IItem[]>([]);
+	const [hasLoaded, setHasLoaded] = useState(false);
 
 	useEffect(() => {
 		if (!query) return;
-		itemsService.get(query).then(setData);
+		setHasLoaded(false);
+		itemsService.get(query).then(setData).finally(() => {
+			setHasLoaded(true);
+		});
 	}, [query]);
 
-	return data;
+	return [data, hasLoaded];
 }
 
 export function useItemDetail(id?: string | null) {

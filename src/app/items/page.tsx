@@ -9,22 +9,32 @@ export default function ItemsPage() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const search = searchParams.get('search');
-    const items = useItems(search);
+    const [items, isLoading] = useItems(search);
+
+
 
 
     return (
         <div className="w-full max-w-screen-lg mx-auto my-small flex flex-col gap-small">
             <BreadCrumps/>
             <div>
-                {items.map((item) => (
-                    <ResultItem
-                        onClick={() => {
-                            router.push(`/items/${item.id}`)
-                        }}
-                        key={item.id}
-                        item={item}
-                    />
-                ))}
+                {(items.length && isLoading) ? (
+                    items.map((item) => (
+                        <ResultItem
+                            onClick={() => {
+                                router.push(`/items/${item.id}`)
+                            }}
+                            key={item.id}
+                            item={item}
+                        />
+                    ))
+                ) : (
+                    <div className="absolute top-0 left-0 w-full h-full grid place-content-center pointer-events-none">
+                        <p>
+                            {isLoading ? "No se encontraron productos" : "cargando..."}
+                        </p>
+                    </div>
+                )}
             </div>
         </div>
     );

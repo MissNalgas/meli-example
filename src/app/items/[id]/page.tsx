@@ -11,7 +11,8 @@ export default function ItemDetailPage() {
     const {id} = params;
     const item = useItemDetail(id as string);
 
-    if (!item) return <div>loading</div>
+    if (!item) return <div className="grid place-content-center h-full absolute w-full top-0 left-0">Cargando...</div>
+
     const {picture, condition, soldQuantity, title, price: {amount, currency}, description} = item;
     const isNew = condition === 'new';
     const formattedPrice = formatPrice(amount, currency);
@@ -21,7 +22,7 @@ export default function ItemDetailPage() {
             <div className="bg-white rounded">
                 <div className="flex gap-small flex-col sm:flex-row">
                     <div
-                        className="bg-white rounded bg-center bg-contain max-w-full w-lg-image h-lg-image bg-no-repeat"
+                        className="ml-small mt-small bg-white rounded bg-center bg-contain max-w-full w-lg-image h-lg-image bg-no-repeat"
                         style={{backgroundImage: `url('${picture}')`}}
                     />
                     <div className="p-medium flex-1">
