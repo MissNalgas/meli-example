@@ -8,7 +8,7 @@ export default function BreadCrumps() {
 	];
 
 	return (
-		<span className="text-dark-gray">
+		<span data-testid="breadcrump" className="text-dark-gray">
 			{texts.join(' > ')}
 		</span>
 	);
