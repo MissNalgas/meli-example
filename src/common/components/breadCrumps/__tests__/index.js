@@ -6,4 +6,4 @@ test('loads breadCrumps', async () => {
 	render(<BreadCrumps/>);
 
 	expect(screen.getByTestId('breadcrump')).toHaveTextContent('Electronica > iPod > Reproducciones > Ipod > 32');
-})
+});
