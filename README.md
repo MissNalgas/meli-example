@@ -42,6 +42,7 @@ yarn start
 - Filters data from MercadoLibre API and returns it using custom APIs
 - Custom URL's
 - Search items and display the detail of each item
+- Custom express server
 
 ## Tests
 
