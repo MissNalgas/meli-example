@@ -43,6 +43,13 @@ yarn start
 - Custom URL's
 - Search items and display the detail of each item
 
+## Tests
+
+To run tests use
+```bash
+yarn test
+```
+
 
 ## License
 
