@@ -39,33 +39,35 @@ router.get('/items/:id', async (req, res) => {
         const id = req.params.id;
         const {default:got} = await import('got');
 
-        let response;
+        let soldQuantity = 0;
+        let responseDescription = '';
+        let item;
+
         try {
-            response = await got(`https://api.mercadolibre.com/items/${id}`).json()
-        } catch (err) {
-            res.status(400).send({message: "Item not found"});
+            item = await got(`https://api.mercadolibre.com/items/${id}`).json();
+        } catch(err) {
+            return res.status(404).send({message: "The item was not found"});
         }
 
-        let soldQuantity = 0;
-        try {
-            const search = await got(`https://api.mercadolibre.com/sites/MLA/search?q=${response?.title}`).json();
-            const itemFound = search.results.find(item => item.id === id);
+
+        const uris = [
+            `https://api.mercadolibre.com/sites/MLA/search?q=${item?.title}`,
+            `https://api.mercadolibre.com/items/${id}/description`,
+        ];
+
+        const promises = uris.map(uri => got(uri).json());
+
+        const [searchResult, descriptionResult] = await Promise.allSettled(promises);
+
+        if (searchResult.value) {
+            const itemFound = searchResult.value.results.find(item => item.id === id);
             if (itemFound?.sold_quantity) {
                 soldQuantity = itemFound.sold_quantity;
             }
-
-        } catch(err) { console.error(err) }
-
-        let responseDescription
-        try {
-            responseDescription = await got(`https://api.mercadolibre.com/items/${id}/description`).json();
-        } catch(err) {
-            responseDescription = {
-                text: ''
-            };
         }
-
-        const item = response;
+        if (descriptionResult.value?.plain_text) {
+            responseDescription = descriptionResult.value.plain_text;
+        }
 
         if (!item) return res.status(404).send({message: "Item not found"});
 
@@ -88,7 +90,7 @@ router.get('/items/:id', async (req, res) => {
                 condition: item.condition,
                 free_shipping: item.shipping?.free_shipping,
                 sold_quantity: soldQuantity,
-                description: responseDescription.text,
+                description: responseDescription,
             }
         })
 
