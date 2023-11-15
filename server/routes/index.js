@@ -10,16 +10,6 @@ router.get('/items', async (req, res) => {
 
         const result = response.results.slice(0, 4);
 
-        // const categories = await (async () => {
-        //     const firstItem = result[0];
-        //     if (!firstItem) return [];
-        //
-        //     const categoryId = firstItem.category_id;
-        //     const categoryResponse = await got(`https://api.mercadolibre.com/categories/${categoryId}`).json();
-        //
-        //     return categoryResponse.path_from_root?.map(item => item.name) || [];
-        // })();
-
         const categoriesPromises = result.map(async item => {
 
             const categoryId = item.category_id;
