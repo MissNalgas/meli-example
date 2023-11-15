@@ -16,7 +16,7 @@ export default function ItemsPage() {
 
     return (
         <div className="w-full max-w-screen-lg mx-auto my-small flex flex-col gap-small">
-            <BreadCrumps/>
+            <BreadCrumps items={items[0]?.categories || []}/>
             <div>
                 {(items.length && isLoading) ? (
                     items.map((item) => (

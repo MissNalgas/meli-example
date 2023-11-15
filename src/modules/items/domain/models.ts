@@ -10,6 +10,7 @@ export interface IItem {
 	condition: string;
 	freeShipping: boolean;
 	city: string;
+	categories: string[];
 }
 
 export interface IItemDetail extends IItem {

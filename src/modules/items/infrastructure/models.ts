@@ -10,6 +10,7 @@ export interface IItemDTO {
     },
     title?: string;
     city?: string;
+    categories?: string[];
 }
 
 export interface IItemResponseDTO {
@@ -34,6 +35,7 @@ export interface IItemDetailDTO {
     };
     title?: string;
     sold_quantity?: number;
+    categories?: string[]
 }
 
 export interface IItemDetailResponseDTO {

@@ -14,7 +14,8 @@ export class ItemAdapter {
 				decimals: itemDTO.price?.decimals || 0,
 			},
 			title: itemDTO.title || '',
-			city: itemDTO.city || ''
+			city: itemDTO.city || '',
+			categories: itemDTO.categories || [],
 		}
 	}
 
@@ -32,7 +33,8 @@ export class ItemAdapter {
 			},
 			title: itemDetail.title || '',
 			soldQuantity: itemDetail.sold_quantity || 0,
-			city: ''
+			city: '',
+			categories: itemDetail.categories || [],
 		}
 	}
 }

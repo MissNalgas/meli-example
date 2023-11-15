@@ -18,7 +18,7 @@ export default function ItemDetailPage() {
     const formattedPrice = formatPrice(amount, currency);
     return (
         <div className="w-full max-w-screen-lg mx-auto my-2 flex flex-col gap-2">
-            <BreadCrumps/>
+            <BreadCrumps items={item.categories}/>
             <div className="bg-white rounded">
                 <div className="flex gap-small flex-col sm:flex-row">
                     <div
