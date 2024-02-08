@@ -9,6 +9,8 @@ export default function MainContainer({children} : MainContainerProps) {
 
     const router = useRouter();
 
+    console.log("I forgot something");
+
     const onSubmit : FormEventHandler<HTMLFormElement> = e => {
         e.preventDefault();
         const searchElement = e.currentTarget[0] as HTMLInputElement;
@@ -37,5 +39,5 @@ export default function MainContainer({children} : MainContainerProps) {
 
 }
 interface MainContainerProps {
-    children?: React.ReactNode;
+    children: unknown;
 }
