@@ -9,7 +9,7 @@ export default function MainContainer({children} : MainContainerProps) {
 
     const router = useRouter();
 
-    console.log("I forgot something");
+    console.log("I forgot something?");
 
     const onSubmit : FormEventHandler<HTMLFormElement> = e => {
         e.preventDefault();
